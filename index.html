@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FIX: maximum-scale=1 evita que iOS haga zoom automatico y rompa el layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BusGo! - Tu copiloto inteligente en Santander</title>
-    <meta name="description"
-        content="BusGo! 2.0. Rutas precisas, Live Activities, Apple Watch y el nuevo modo offline inteligente para moverte por Santander sin estrés.">
-
-    <!-- Google Fonts: Inter -->
+    <meta name="description" content="BusGo! 2.0. Rutas precisas, Live Activities, Apple Watch y el nuevo modo offline inteligente para moverte por Santander sin estres.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Web Haptics Library -->
+    <script src="https://cdn.jsdelivr.net/npm/web-haptics@latest/dist/web-haptics.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body id="inicio">
-    <!-- Background Canvas -->
+
+    <!-- Background -->
     <div class="liquid-bg">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -31,70 +29,70 @@
                 <img src="assets/logo-new-gray.png" alt="BusGo Logo" class="logo-img">
                 <span>BusGo!</span>
             </div>
-            <!-- Hamburger button (mobile only) -->
-            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
-            </button>
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links">
                 <a href="#inicio">Inicio</a>
-                <a href="#que-es">¿Qué es?</a>
+                <a href="#que-es">¿Que es?</a>
                 <a href="#beneficios">Beneficios</a>
-                <a href="#novedades">Novedades</a>
                 <a href="#plus">BusGo!+</a>
                 <a href="#contacto">Contacto</a>
             </div>
-            <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-appstore bgBlur">
-                <svg viewBox="0 0 384 512" width="16" height="16">
-                    <path fill="currentColor"
-                        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 22 186 2.3 262.3c-40 153.3 64.1 275.5 138.8 275.5 26.3 0 54.1-16.1 82.2-16.1 28.5 0 51.5 16.4 83.2 16.4 75.3 0 162.2-113.8 190.2-184.8-63.5-25.2-108.9-72.3-108.9-142.1zm-84.6-150.8c22.5-27.1 35.8-59 31.8-88.7-27.4 1.1-64.8 18.5-88.2 45.4-20 23.1-37.4 57.3-32.8 88.5 31.3 2.5 64.8-16.8 89.2-45.2z" />
-                </svg>
-                <span>Obtener</span>
-            </a>
+            <div class="nav-right">
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-appstore bgBlur">
+                    <svg viewBox="0 0 384 512" width="16" height="16"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 22 186 2.3 262.3c-40 153.3 64.1 275.5 138.8 275.5 26.3 0 54.1-16.1 82.2-16.1 28.5 0 51.5 16.4 83.2 16.4 75.3 0 162.2-113.8 190.2-184.8-63.5-25.2-108.9-72.3-108.9-142.1zm-84.6-150.8c22.5-27.1 35.8-59 31.8-88.7-27.4 1.1-64.8 18.5-88.2 45.4-20 23.1-37.4 57.3-32.8 88.5 31.3 2.5 64.8-16.8 89.2-45.2z"/></svg>
+                    <span>Obtener</span>
+                </a>
+                <!-- Hamburger button - TOUCH-OPTIMIZED with inline handler for instant response -->
+                <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#inicio" class="mobile-link" onclick="closeMenu()">Inicio</a>
+            <a href="#que-es" class="mobile-link" onclick="closeMenu()">¿Que es?</a>
+            <a href="#beneficios" class="mobile-link" onclick="closeMenu()">Beneficios</a>
+            <a href="#plus" class="mobile-link plus-mobile-link" onclick="closeMenu()">BusGo!+</a>
+            <a href="#contacto" class="mobile-link" onclick="closeMenu()">Contacto</a>
+            <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="mobile-download-btn" onclick="closeMenu()">
+                Descargar gratis
+            </a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content reveal scale-up">
             <h1 class="hero-title">
-                Precisión pura. <br>
+                Precision pura. <br>
                 <span class="text-gradient">Tu copiloto personal.</span>
             </h1>
-            <p class="hero-subtitle">Descubre BusGo! 2.0. Rediseñada desde cero. Más rápida, fluida y con modo offline
-                inteligente para que nunca te quedes tirado en la tierruca.</p>
-            <div class="hero-badges">
-                <span class="badge-pill">⭐ 5.0 en App Store</span>
-                <span class="badge-pill">🆓 Gratis</span>
-                <span class="badge-pill">📱 iPhone · Watch · iPad</span>
-            </div>
+            <p class="hero-subtitle">Descubre BusGo! 2.0. Rediseñada desde cero. Mas rapida, fluida y con modo offline inteligente para que nunca te quedes tirado en la tierruca.</p>
             <div class="hero-actions">
-                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank"
-                    class="btn-primary glow-button">
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-primary glow-button" data-haptic="medium">
                     Descargar gratis
                 </a>
             </div>
         </div>
-
         <div class="hero-image-wrapper reveal delay-1 fade-up">
             <div class="carousel-container">
                 <div class="carousel-track" id="heroCarouselTrack">
-                    <div class="carousel-slide"><img src="assets/closeup.png" alt="BusGo Interface"
-                            class="carousel-image" width="600" height="1200" loading="lazy"></div>
-                    <div class="carousel-slide"><img src="assets/psg.png" alt="Paris Saint-Germain"
-                            class="carousel-image" width="1200" height="800" loading="lazy"></div>
-                    <div class="carousel-slide"><img src="assets/IMG_6971 2.PNG" alt="Map View" class="carousel-image">
-                    </div>
-                    <div class="carousel-slide"><img src="assets/IMG_6972 2.PNG" alt="Wallet View"
-                            class="carousel-image"></div>
-                    <div class="carousel-slide"><img src="assets/Apple_Watch_Mockup_2.png" alt="Apple Watch"
-                            class="carousel-image" style="object-fit: contain; padding: 2rem;"></div>
-                    <div class="carousel-slide"><img src="assets/Tiles.jpg" alt="Tiles View" class="carousel-image">
-                    </div>
+                    <div class="carousel-slide"><img src="assets/closeup.png" alt="BusGo Interface" class="carousel-image" width="600" height="1200" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/psg.png" alt="Paris Saint-Germain" class="carousel-image" width="1200" height="800" loading="lazy"></div>
+                    <div class="carousel-slide"><img src="assets/IMG_6971 2.PNG" alt="Map View" class="carousel-image"></div>
+                    <div class="carousel-slide"><img src="assets/IMG_6972 2.PNG" alt="Wallet View" class="carousel-image"></div>
+                    <div class="carousel-slide"><img src="assets/Apple_Watch_Mockup_2.png" alt="Apple Watch" class="carousel-image" style="object-fit:contain;padding:2rem"></div>
+                    <div class="carousel-slide"><img src="assets/Tiles.jpg" alt="Tiles View" class="carousel-image"></div>
                 </div>
-                <button class="carousel-btn prev" id="carouselPrev">&#10094;</button>
-                <button class="carousel-btn next" id="carouselNext">&#10095;</button>
-                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-btn prev" id="carouselPrev" data-haptic="light">&#10094;</button>
+                <button class="carousel-btn next" id="carouselNext" data-haptic="light">&#10095;</button>
             </div>
+            <div class="carousel-dots" id="carouselDots"></div>
             <div class="hero-glow"></div>
         </div>
     </header>
@@ -104,451 +102,196 @@
         <div class="split-layout">
             <div class="text-content reveal fade-up">
                 <div class="label-premium">FILOSOFIA</div>
-                <h2 class="section-heading">Diseñada en Santander, <br>para el mundo.</h2>
+                <h2 class="section-heading">Diseñada en Santander,<br>para el mundo.</h2>
                 <p class="section-body">
-                    BusGo! nació como un proyecto personal para mejorar la movilidad en nuestra ciudad. <br><br>
-                    No somos una app de transportes más; somos una herramienta construida con las últimas tecnologías de
-                    Apple para ofrecer una experiencia que se siente nativa, rápida y, sobre todo, útil.
+                    BusGo! nacio como un proyecto personal para mejorar la movilidad en nuestra ciudad.<br><br>
+                    No somos una app de transportes mas; somos una herramienta construida con las ultimas tecnologias de Apple para ofrecer una experiencia que se siente nativa, rapida y, sobre todo, util.
                 </p>
             </div>
             <div class="image-content reveal delay-2 fade-up">
-                <img src="assets/Overview.png" alt="BusGo Overview" class="showcase-img premium-shadow" width="1200"
-                    height="800" loading="lazy">
+                <!-- FIX: imagen delimitada con contenedor de tamano fijo -->
+                <div class="showcase-wrapper">
+                    <img src="assets/Overview.png" alt="BusGo Overview" class="showcase-img premium-shadow" width="1200" height="800" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCION: BENEFICIOS (GRID) -->
+    <!-- SECCION: BENEFICIOS -->
     <section class="benefits section" id="beneficios">
         <h2 class="section-title text-center reveal fade-up">Simplemente brillante.</h2>
-        <p class="section-subtitle text-center reveal delay-1 fade-up mb-8">Cada detalle ha sido pensado para que tu
-            trayecto sea impecable.</p>
-
+        <p class="section-subtitle text-center reveal delay-1 fade-up mb-8">Cada detalle ha sido pensado para que tu trayecto sea impecable.</p>
         <div class="bento-grid">
-            <!-- Visualiza y Explora + Mapas -->
             <div class="bento-item reveal fade-up item-large glass-card overflow-hidden">
-                <img src="assets/IMG_6971 2.PNG" alt="Simulación real" class="bento-bg-img opacity-60" width="1200"
-                    height="800" loading="lazy">
+                <img src="assets/IMG_6971 2.PNG" alt="Simulacion real" class="bento-bg-img opacity-60" width="1200" height="800" loading="lazy">
                 <div class="bento-gradient-overlay"></div>
                 <div class="bento-overlay p-8">
                     <div class="label-white mb-2">INTEGRACION TOTAL</div>
                     <h3>Visualiza y Explora</h3>
-                    <p>Mapas interactivos con trazado real de carreteras. Mira cómo los buses cobran vida y se mueven
-                        con precisión matemática a tu alrededor.</p>
+                    <p>Mapas interactivos con trazado real de carreteras. Mira como los buses cobran vida y se mueven con precision matematica a tu alrededor.</p>
                 </div>
             </div>
-
-            <!-- Apple Watch -->
             <div class="bento-item reveal delay-1 fade-up glass-card watch-tile">
-                <div class="watch-bg" style="background-image: url('assets/Apple_Watch_Mockup_2.png');"></div>
+                <div class="watch-bg" style="background-image:url('assets/Apple_Watch_Mockup_2.png')"></div>
                 <div class="watch-overlay"></div>
                 <div class="bento-overlay p-8 z-10">
                     <div class="label-white mb-2">ULTRA PORTATIL</div>
-                    <h3>En tu muñeca</h3>
-                    <p>Toda la potencia de BusGo! optimizada para la pantalla de tu Apple Watch. Consulta tiempos sin
-                        sacar el iPhone.</p>
+                    <h3>En tu muneca</h3>
+                    <p>Toda la potencia de BusGo! optimizada para la pantalla de tu Apple Watch. Consulta tiempos sin sacar el iPhone.</p>
                 </div>
             </div>
-
-            <!-- Dark Mode Real -->
             <div class="bento-item reveal delay-2 fade-up glass-card center-content text-center dark-mode-tile">
                 <div class="bento-overlay relative">
                     <div class="label-blue mb-4">ESTETICA</div>
                     <h3>Dark Mode Real</h3>
-                    <p class="opacity-80">Diseño oscuro puro pensado para pantallas OLED. Elegante, ahorra batería y
-                        cuida tu vista por la noche.</p>
+                    <p class="opacity-80">Diseño oscuro puro pensado para pantallas OLED. Elegante, ahorra bateria y cuida tu vista por la noche.</p>
                 </div>
             </div>
-
-            <!-- Cartera TUS -->
             <div class="bento-item reveal fade-up glass-card image-card">
-                <img src="assets/IMG_6972 2.PNG" alt="Cartera Digital" class="bento-bg-img opacity-40" width="800"
-                    height="1200" loading="lazy">
+                <img src="assets/IMG_6972 2.PNG" alt="Cartera Digital" class="bento-bg-img opacity-40" width="800" height="1200" loading="lazy">
                 <div class="bento-gradient-overlay"></div>
                 <div class="bento-overlay">
                     <h3>Cartera Digital</h3>
                     <p>Gestiona tus abonos y saldos del TUS de forma centralizada y segura.</p>
                 </div>
             </div>
-
-            <!-- Offline -->
             <div class="bento-item reveal delay-1 fade-up glass-card center-content text-center">
                 <div class="bento-overlay relative">
                     <div class="label-orange mb-4">FIABILIDAD</div>
                     <h3>Offline Inteligente</h3>
-                    <p class="opacity-80">Accede a horarios y rutas incluso sin cobertura. Nunca te quedes sin
-                        información.</p>
+                    <p class="opacity-80">Accede a horarios y rutas incluso sin cobertura. Nunca te quedes sin informacion.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCION: INFO DE LA APP (NUEVA) -->
-    <section class="app-info section" id="novedades">
-        <div class="app-info-header text-center reveal fade-up">
-            <div class="label-premium">LA APP</div>
-            <h2 class="section-heading">Todo lo que necesitas saber.</h2>
-            <p class="section-body" style="max-width:700px; margin: 0 auto;">BUSGo! está disponible de forma gratuita
-                en la App Store. Descarga la app y muévete por Santander como nunca antes.</p>
-        </div>
+    <!-- SECCION: BUSGO!+ PREMIUM - MUY DESTACADA -->
+    <section class="plus section" id="plus">
 
-        <!-- Stats row -->
-        <div class="stats-row reveal fade-up">
-            <div class="stat-card glass-card">
-                <div class="stat-value text-gradient">5.0</div>
-                <div class="stat-label">Valoración App Store</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-value" style="color: var(--green);">v2.0</div>
-                <div class="stat-label">Versión actual</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-value" style="color: var(--cyan);">Gratis</div>
-                <div class="stat-label">Descarga</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-value" style="color: var(--purple);">iOS 18+</div>
-                <div class="stat-label">Requisito mínimo</div>
+        <!-- Hero banner de BusGo!+ -->
+        <div class="plus-hero reveal fade-up">
+            <div class="plus-hero-bg"></div>
+            <div class="plus-hero-content">
+                <div class="plus-badge-large">BusGo!+</div>
+                <h2 class="plus-main-title">Eleva tu experiencia.<br><span class="plus-gradient-text">Sin limites.</span></h2>
+                <p class="plus-main-sub">Desbloquea funciones exclusivas disenadas para los que de verdad viven la ciudad.</p>
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-plus-cta" data-haptic="medium">Activar BusGo!+</a>
             </div>
         </div>
 
         <!-- Features grid -->
-        <div class="features-list reveal fade-up">
-            <h3 class="features-list-title">Funciones principales</h3>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--blue);">🚌</div>
-                    <div>
-                        <h4>Horarios en tiempo real</h4>
-                        <p>Datos oficiales del Ayuntamiento de Santander. Precisión al segundo.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--orange);">🗺️</div>
-                    <div>
-                        <h4>Mapa interactivo</h4>
-                        <p>Visualiza rutas completas y sigue la posición de los buses en directo.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--green);">⭐</div>
-                    <div>
-                        <h4>Favoritos personalizados</h4>
-                        <p>Guarda tus líneas y paradas habituales para acceder con un toque.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--purple);">🔔</div>
-                    <div>
-                        <h4>Alertas inteligentes</h4>
-                        <p>Avisos de retrasos e incidencias en tus líneas habituales.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--cyan);">🔍</div>
-                    <div>
-                        <h4>Búsqueda rápida</h4>
-                        <p>Encuentra la parada más cercana o busca por nombre, número o voz.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--pink);">🔒</div>
-                    <div>
-                        <h4>100% privada</h4>
-                        <p>Sin rastreo, sin cuentas externas. Todos los datos permanecen en tu dispositivo.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--yellow);">🌙</div>
-                    <div>
-                        <h4>Modo viaje</h4>
-                        <p>Sigue tu trayecto parada a parada con aviso automático para bajar.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon" style="color: var(--orange);">🏠</div>
-                    <div>
-                        <h4>Botón "Llévame a casa"</h4>
-                        <p>Calcula la ruta más rápida a casa con un solo toque.</p>
-                    </div>
-                </div>
+        <div class="plus-features-grid reveal fade-up">
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#127775;</div>
+                <h4>Live Activities</h4>
+                <p>Tu bus en tiempo real en la pantalla de bloqueo y Dynamic Island.</p>
+            </div>
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#8987;</div>
+                <h4>Alertas anticipadas</h4>
+                <p>Notificaciones minutos antes de que llegue tu bus. Nunca mas corras.</p>
+            </div>
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#9201;</div>
+                <h4>Historial completo</h4>
+                <p>Revisa todos tus trayectos y estadisticas de uso detalladas.</p>
+            </div>
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#127760;</div>
+                <h4>Sin publicidad</h4>
+                <p>Experiencia completamente limpia. Cero anuncios, cero interrupciones.</p>
+            </div>
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#127381;</div>
+                <h4>Widgets exclusivos</h4>
+                <p>Widgets personalizados para tus lineas favoritas en la pantalla de inicio.</p>
+            </div>
+            <div class="plus-feat-card">
+                <div class="plus-feat-icon">&#9201;</div>
+                <h4>Apple Watch Pro</h4>
+                <p>Complicaciones y app Watch con actualizaciones en tiempo real.</p>
             </div>
         </div>
 
-        <!-- Novedades v2.0 -->
-        <div class="changelog reveal fade-up glass-card">
-            <div class="changelog-header">
-                <div class="badge-version">v2.0</div>
-                <div>
-                    <h3>Novedades en BusGo! 2.0</h3>
-                    <p class="changelog-date">Lanzada el 18 de febrero de 2026</p>
-                </div>
+        <!-- Pricing cards -->
+        <div class="pricing-grid reveal delay-1 fade-up">
+            <div class="pricing-card">
+                <div class="pricing-period">Mensual</div>
+                <div class="pricing-price"><span class="pricing-amount">0,99</span><span class="pricing-currency">EUR/mes</span></div>
+                <p class="pricing-desc">Prueba BusGo!+ sin compromiso.</p>
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="pricing-btn" data-haptic="light">Empezar</a>
             </div>
-            <div class="changelog-grid">
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--blue);"></span>
-                    <span><strong>Modo Offline Inteligente</strong> — acceso a horarios en Modo Avión o con API caída</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--orange);"></span>
-                    <span><strong>Simulación en tiempo real</strong> — buses moviéndose en el mapa con fluidez matemática</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--green);"></span>
-                    <span><strong>App Clips</strong> — accede sin instalar desde carteles NFC o QR en las paradas</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--purple);"></span>
-                    <span><strong>Apple Watch</strong> — app nativa para consultar tiempos desde la muñeca</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--cyan);"></span>
-                    <span><strong>Precisión al segundo</strong> — cuentas atrás con segundos exactos de llegada</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--yellow);"></span>
-                    <span><strong>Viajes programados</strong> — rutinas como "Ir al trabajo" con aviso de salida</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--pink);"></span>
-                    <span><strong>Modo Turismo</strong> — rutas especiales a puntos emblemáticos de Santander</span>
-                </div>
-                <div class="changelog-item">
-                    <span class="cl-dot" style="background: var(--orange);"></span>
-                    <span><strong>Rendimiento extremo</strong> — scroll a 120Hz, carga instantánea, Modo Bajo Consumo</span>
-                </div>
+            <div class="pricing-card pricing-popular">
+                <div class="pricing-popular-badge">MAS POPULAR</div>
+                <div class="pricing-period">Anual</div>
+                <div class="pricing-price"><span class="pricing-amount">9,99</span><span class="pricing-currency">EUR/ano</span></div>
+                <p class="pricing-desc">Ahorra un 17% frente al mensual.</p>
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="pricing-btn pricing-btn-highlight" data-haptic="medium">Activar ahora</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-period">Vitalicio</div>
+                <div class="pricing-price"><span class="pricing-amount">24,99</span><span class="pricing-currency">EUR unico</span></div>
+                <p class="pricing-desc">Paga una vez. Para siempre.</p>
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="pricing-btn" data-haptic="light">Comprar</a>
             </div>
         </div>
 
-        <!-- Plataformas -->
-        <div class="platforms-row reveal fade-up">
-            <h3 class="text-center mb-6" style="font-size:1.4rem; font-weight:700;">Disponible en todos tus dispositivos Apple</h3>
-            <div class="platforms-grid">
-                <div class="platform-card glass-card">
-                    <div class="platform-icon">📱</div>
-                    <div class="platform-name">iPhone</div>
-                    <div class="platform-req">iOS 18.0+</div>
-                </div>
-                <div class="platform-card glass-card">
-                    <div class="platform-icon">⌚</div>
-                    <div class="platform-name">Apple Watch</div>
-                    <div class="platform-req">watchOS 26.0+</div>
-                </div>
-                <div class="platform-card glass-card">
-                    <div class="platform-icon">📲</div>
-                    <div class="platform-name">iPad</div>
-                    <div class="platform-req">iPadOS 18.0+</div>
-                </div>
-                <div class="platform-card glass-card">
-                    <div class="platform-icon">💻</div>
-                    <div class="platform-name">Mac</div>
-                    <div class="platform-req">macOS 15.0+ (M1)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCION: BUSGO!+ (Suscripcion PREMIUM) -->
-    <section class="plus section relative" id="plus">
-        <div class="bg-glow absolute-center"></div>
-        <div class="plus-header text-center reveal fade-up">
-            <svg class="crown-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L15 9.5L22 7L18.5 14H5.5L2 7L9 9.5L12 2Z"></path>
-                <path d="M5.5 16H18.5V20C18.5 21.1 17.6 22 16.5 22H7.5C6.4 22 5.5 21.1 5.5 20V16Z"></path>
-            </svg>
-            <h2 class="plus-title">BusGo!+</h2>
-            <p class="plus-subtitle">Las funciones más avanzadas para los usuarios más exigentes. Elige el plan que
-                mejor se adapte a ti.</p>
-        </div>
-
-        <!-- Precios -->
-        <div class="pricing-row reveal fade-up">
-            <div class="price-card glass-card">
-                <div class="price-label">Mensual</div>
-                <div class="price-value">0,99€</div>
-                <div class="price-period">/ mes</div>
-                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-secondary price-btn">Empezar</a>
-            </div>
-            <div class="price-card glass-card price-featured">
-                <div class="price-badge">MÁS POPULAR</div>
-                <div class="price-label">Anual</div>
-                <div class="price-value">9,99€</div>
-                <div class="price-period">/ año · menos de 1€/mes</div>
-                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-primary price-btn">Empezar</a>
-            </div>
-            <div class="price-card glass-card">
-                <div class="price-label">Vitalicio</div>
-                <div class="price-value">24,99€</div>
-                <div class="price-period">pago único</div>
-                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank" class="btn-secondary price-btn">Empezar</a>
-            </div>
-        </div>
-
-        <!-- Premium Videos Tiles -->
-        <div class="premium-videos-grid mt-12 mb-12">
-            <div class="vid-card reveal fade-up glass-card overflow-hidden">
-                <video src="assets/tusgo_liveactivitydemo.mp4" playsinline muted loop class="abs-media"
-                    loading="lazy"></video>
-                <div class="vid-overlay">
-                    <div class="badge-plus">PLUS</div>
-                    <h4>Live Activities</h4>
-                    <p>Sigue tu bus desde la pantalla de bloqueo o la Isla Dinámica de forma exclusiva.</p>
-                </div>
-            </div>
-            <div class="vid-card reveal delay-1 fade-up glass-card overflow-hidden">
-                <video src="assets/allstop_demo.mp4" playsinline muted loop class="abs-media" loading="lazy"></video>
-                <div class="vid-overlay">
-                    <div class="badge-plus">PLUS</div>
-                    <h4>Mapa Dinámico Pro</h4>
-                    <p>Desbloquea la visualización completa de flotas en tiempo real con movimiento fluido.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="premium-split">
-            <div class="premium-features reveal fade-up">
-                <div class="feat-row">
-                    <div class="feat-icon text-orange">🚆</div>
-                    <div>
-                        <h4>Cercanías en Tiempo Real</h4>
-                        <p>Horarios de Renfe y FEVE integrados. Planifica transbordos perfectos.</p>
-                    </div>
-                </div>
-                <div class="feat-row">
-                    <div class="feat-icon text-purple">🔔</div>
-                    <div>
-                        <h4>Notificaciones Ilimitadas</h4>
-                        <p>Configura todos los avisos que necesites para tus rutas diarias.</p>
-                    </div>
-                </div>
-                <div class="feat-row">
-                    <div class="feat-icon text-cyan">🚌</div>
-                    <div>
-                        <h4>Skins Exclusivas</h4>
-                        <p>Más de 25 iconos para personalizar tu experiencia en el mapa.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="premium-vis reveal delay-2 fade-up glass-card overflow-hidden text-center relative">
-                <img src="assets/Tiles.jpg" alt="Tiles UI BusGo+" class="premium-tiles-img" width="1200" height="900"
-                    loading="lazy">
-                <div class="premium-tiles-gradient">
-                    <h4 class="text-white font-semibold text-lg drop-shadow">Diseño con Tiles</h4>
-                    <p class="text-sm opacity-90 mt-2">Visualiza múltiples paradas y tiempos simultáneamente <br>en
-                        una cuadrícula de alta densidad.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="comparison-table text-center reveal delay-1 fade-up mt-12 glass-table">
-            <h3 class="mb-6 text-2xl font-bold">Compara los planes</h3>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="text-left">Funcionalidad</th>
-                            <th>BusGo!</th>
-                            <th class="plus-col">BusGo!+</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-left">Tiempos de llegada</td>
-                            <td class="dot-check">✔️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left">Guardar favoritos</td>
-                            <td class="dot-check">✔️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left">Notificaciones inteligentes</td>
-                            <td class="limit-text">Hasta 2</td>
-                            <td class="plus-text">Ilimitadas</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td class="text-left">Cercanías (Trenes)</td>
-                            <td class="dot-x">✖️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td class="text-left">Live Activities & Dynamic Island</td>
-                            <td class="dot-x">✖️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td class="text-left">Mapa Dinámico Full</td>
-                            <td class="dot-x">✖️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td class="text-left">Vista rápida con Tiles</td>
-                            <td class="dot-x">✖️</td>
-                            <td class="dot-check-plus">✔️</td>
-                        </tr>
-                        <tr class="highlight">
-                            <td class="text-left">Skins Personalizadas</td>
-                            <td class="dot-x">✖️</td>
-                            <td class="dot-check-plus">+25</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-sm opacity-40 mt-6">Tu apoyo hace posible que BusGo! siga existiendo sin publicidad
-                intrusiva.</p>
+        <!-- Comparison table -->
+        <div class="glass-table reveal delay-2 fade-up">
+            <h3 class="table-title">Gratis vs <span class="plus-gradient-text">BusGo!+</span></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:left">Funcion</th>
+                        <th>Gratis</th>
+                        <th class="plus-col">BusGo!+</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Tiempos en tiempo real</td><td>&#10003;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Mapa de rutas</td><td>&#10003;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Modo offline</td><td>&#10003;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Live Activities</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Widgets personalizados</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Apple Watch avanzado</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Sin publicidad</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Alertas anticipadas</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Historial de trayectos</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                    <tr><td>Soporte prioritario</td><td>&#8212;</td><td class="dot-check-plus">&#10003;</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <!-- SECCION: CONTACTO -->
-    <section class="cta section contact-section" id="contacto">
-        <div class="cta-card reveal fade-scale glass-card-solid text-center">
-            <h2 class="mb-4">Hablemos.</h2>
-            <p class="mb-8 opacity-70">¿Tienes feedback o has encontrado algún error? <br>Estamos encantados de
-                escucharte y seguir mejorando.</p>
-            <a href="mailto:pantallas-suelda-5k@icloud.com" class="btn-secondary contact-btn">
-                Enviar un mensaje
-            </a>
-
-            <div class="divider"></div>
-
-            <h2 class="hero-title mb-6" style="font-size: 2.5rem;">Súbete a BusGo!</h2>
-            <div class="flex-center">
-                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank"
-                    class="btn-primary large glow-button">
-                    Ir a la App Store
-                </a>
-            </div>
+    <section class="section contact-section text-center" id="contacto">
+        <div class="reveal fade-up">
+            <h2 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Hablemos.</h2>
+            <p style="color:var(--text-sec);font-size:1.3rem;margin:1.5rem auto 3rem;max-width:600px">
+                Tienes alguna sugerencia, bug que reportar o simplemente quieres decir hola.
+            </p>
+            <a href="mailto:hola@javib.es" class="btn-primary large glow-button" data-haptic="medium">hola@javib.es</a>
         </div>
     </section>
 
+    <div class="divider"></div>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-left">
-                <div class="footer-logo">
-                    <img src="assets/logo-new-gray.png" alt="Logo" class="footer-img"> BusGo!
-                </div>
+            <div class="footer-logo">
+                <img src="assets/logo-new-gray.png" alt="Logo" class="footer-img">
+                <span>BusGo!</span>
             </div>
             <div class="footer-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#que-es">¿Qué es?</a>
-                <a href="#beneficios">Beneficios</a>
-                <a href="#novedades">Novedades</a>
-                <a href="#plus">Plus</a>
-                <a href="https://rainbow-postbox-079.notion.site/Pol-tica-de-privacidad-BUSGo-28c0e98f0ccb80449a77d277fbeb81d3"
-                    target="_blank">Privacidad</a>
-                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">EULA</a>
+                <a href="https://apps.apple.com/es/app/busgo/id6753916938" target="_blank">App Store</a>
+                <a href="mailto:hola@javib.es">Contacto</a>
+                <a href="#">Privacidad</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2026 BusGo!. App independiente. Hecho por un apasionado de la tecnología en
-                Santander.</p>
-        </div>
+        <p class="copyright">2025 BusGo! Hecho con amor en Santander.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
