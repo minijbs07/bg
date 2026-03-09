@@ -165,6 +165,65 @@
             margin-top: 2px;
         }
 
+        /* Links section — App Store + Web */
+        .links-section {
+            margin-top: 16px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .link-pill {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .link-pill:active {
+            background: rgba(28,28,30,0.85);
+            border-color: rgba(255,255,255,0.18);
+        }
+        .link-pill-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+        .link-pill-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+        .link-pill-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+        .link-pill-label-appstore {
+            background: linear-gradient(90deg, var(--orange), var(--yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .link-pill-label-web {
+            color: var(--muted);
+        }
+        .link-pill-sub {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
         /* Logo / branding at bottom */
         .brand {
             margin-top: auto;
@@ -271,7 +330,8 @@
         </div>
 
         <p class="tap-hint">Pulsa el banner de arriba<br>para abrir <span>BusGo!</span> al instante</p>
-        <p class="tap-sub">Sin instalar nada. Solo toca y consulta<br>los próximos buses en tiempo real.</p>
+        <!-- CHANGE 2: "Santander" added -->
+        <p class="tap-sub">Sin instalar nada. Solo toca y consulta<br>los pr\u00f3ximos buses de Santander en tiempo real.</p>
 
         <!-- Stop info card -->
         <div class="stop-card">
@@ -280,29 +340,77 @@
             <span class="stop-id" id="stopId"></span>
         </div>
 
+        <!-- CHANGE 3: Links section -->
+        <div class="links-section">
+            <!-- App Store link -->
+            <a class="link-pill" href="https://apps.apple.com/app/id6503249842" target="_blank" rel="noopener">
+                <div class="link-pill-icon">
+                    <!-- SF-style down-arrow into tray (download) icon -->
+                    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                        <path d="M14 4v14M8 12l6 6 6-6" stroke="#FF9F0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 20h18" stroke="#FFD60A" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="link-pill-text">
+                    <span class="link-pill-label link-pill-label-appstore">Descargar app completa</span>
+                    <span class="link-pill-sub">App Store — BusGo!</span>
+                </div>
+            </a>
+            <!-- Web link -->
+            <a class="link-pill" href="https://javib.es/bg" target="_blank" rel="noopener">
+                <div class="link-pill-icon">
+                    <!-- Globe icon -->
+                    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+                        <circle cx="14" cy="14" r="9" stroke="#86868B" stroke-width="2"/>
+                        <path d="M14 5c-2.5 3-4 5.5-4 9s1.5 6 4 9M14 5c2.5 3 4 5.5 4 9s-1.5 6-4 9" stroke="#86868B" stroke-width="1.6" stroke-linecap="round"/>
+                        <path d="M5 14h18" stroke="#86868B" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="link-pill-text">
+                    <span class="link-pill-label link-pill-label-web">javib.es/bg</span>
+                    <span class="link-pill-sub">Web de BusGo!</span>
+                </div>
+            </a>
+        </div>
+
         <!-- Desktop notice -->
         <div class="desktop-notice">
-            Esta página está diseñada para Safari en iPhone.<br>
+            Esta p\u00e1gina est\u00e1 dise\u00f1ada para Safari en iPhone.<br>
             Abre este enlace desde tu iPhone para ver el App Clip.
         </div>
 
         <div class="brand">
             <span class="brand-name">BusGo!</span>
-            <span class="brand-sub">Buses de Sevilla en tiempo real</span>
+            <!-- CHANGE 1: Sevilla -> Santander -->
+            <span class="brand-sub">Buses de Santander en tiempo real</span>
         </div>
     </div>
 
+    <!-- CHANGE 4: Updated script — checks both path segments AND ?stop= query param -->
     <script>
-        // Extract stop ID from URL path: /preview/1234/ or /bg/preview/1234/
         (function() {
-            var segments = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
-            var stopId = segments[segments.length - 1];
+            var stopId = null;
 
-            // Validate it's a number
-            if (stopId && /^\d+$/.test(stopId)) {
+            // First: check ?stop= query param (set by 404.html redirect)
+            var params = new URLSearchParams(window.location.search);
+            var stopParam = params.get('stop');
+            if (stopParam && /^\d+$/.test(stopParam)) {
+                stopId = stopParam;
+            }
+
+            // Fallback: extract from URL path segments: /preview/1234/ or /bg/preview/1234/
+            if (!stopId) {
+                var segments = location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+                var lastSeg = segments[segments.length - 1];
+                if (lastSeg && /^\d+$/.test(lastSeg)) {
+                    stopId = lastSeg;
+                }
+            }
+
+            if (stopId) {
                 document.getElementById('stopId').textContent = 'ID ' + stopId;
                 document.getElementById('stopName').textContent = 'Parada ' + stopId;
-                document.title = 'BusGo! — Parada ' + stopId;
+                document.title = 'BusGo! \u2014 Parada ' + stopId;
             } else {
                 document.getElementById('stopName').textContent = 'Parada desconocida';
                 document.getElementById('stopId').textContent = '';
