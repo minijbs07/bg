@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+  // GitHub Pages SPA redirect trick
+  // Intercepts /bg/preview/200 -> /bg/preview/?stop=200
+  (function() {
+    var path = window.location.pathname;
+    // Match /preview/DIGITS or /bg/preview/DIGITS
+    var m = path.match(/\/preview\/(\d+)\/?$/);
+    if (m) {
+      window.location.replace('/bg/preview/?stop=' + m[1]);
+    } else {
+      // Not a preview URL, show generic 404
+      document.write('<h1>404 - Página no encontrada</h1>');
+    }
+  })();
+</script>
+</head>
+<body></body>
+</html>
