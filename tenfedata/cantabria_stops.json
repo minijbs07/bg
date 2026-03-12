@@ -1,0 +1,548 @@
+[
+  {
+    "stop_id": "05602",
+    "stop_name": "Valdecilla La Marga",
+    "stop_lat": "43.4529465",
+    "stop_lon": "-3.8282409",
+    "wheelchair_boarding": "2                                                                                                     "
+  },
+  {
+    "stop_id": "05603",
+    "stop_name": "Cazoña",
+    "stop_lat": "43.4551542",
+    "stop_lon": "-3.8411637",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "05604",
+    "stop_name": "Adarzo",
+    "stop_lat": "43.4534716",
+    "stop_lon": "-3.8559044",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "05605",
+    "stop_name": "Bezana",
+    "stop_lat": "43.4408549",
+    "stop_lon": "-3.8995921",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "05607",
+    "stop_name": "Mortera",
+    "stop_lat": "43.4352343",
+    "stop_lon": "-3.9182532",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05609",
+    "stop_name": "Boo De Piélagos",
+    "stop_lat": "43.4316558",
+    "stop_lon": "-3.9463107",
+    "wheelchair_boarding": "2                                                                                                         "
+  },
+  {
+    "stop_id": "05611",
+    "stop_name": "Mogro",
+    "stop_lat": "43.4248932",
+    "stop_lon": "-3.9605163",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "05613",
+    "stop_name": "Gornazo",
+    "stop_lat": "43.4097025",
+    "stop_lon": "-3.9886035",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05615",
+    "stop_name": "Mar",
+    "stop_lat": "43.3984063",
+    "stop_lon": "-4.0100059",
+    "wheelchair_boarding": "2                                                                                                                     "
+  },
+  {
+    "stop_id": "05617",
+    "stop_name": "Requejada",
+    "stop_lat": "43.3914179",
+    "stop_lon": "-4.0280246",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "05619",
+    "stop_name": "Barreda",
+    "stop_lat": "43.3742833",
+    "stop_lon": "-4.0418972",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05620",
+    "stop_name": "Altamira",
+    "stop_lat": "43.3519196",
+    "stop_lon": "-4.0569699",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "05621",
+    "stop_name": "Torrelavega-Centro",
+    "stop_lat": "43.3510014",
+    "stop_lon": "-4.0511789",
+    "wheelchair_boarding": "2                                                                                                      "
+  },
+  {
+    "stop_id": "05622",
+    "stop_name": "Ganzo",
+    "stop_lat": "43.3565281",
+    "stop_lon": "-4.0702273",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "05623",
+    "stop_name": "Puente San Miguel",
+    "stop_lat": "43.3586724",
+    "stop_lon": "-4.0877667",
+    "wheelchair_boarding": "2                                                                                                       "
+  },
+  {
+    "stop_id": "05625",
+    "stop_name": "Santa Isabel De Quijas",
+    "stop_lat": "43.3590101",
+    "stop_lon": "-4.1118533",
+    "wheelchair_boarding": "2                                                                                                  "
+  },
+  {
+    "stop_id": "05627",
+    "stop_name": "San Pedro De Rudagüera",
+    "stop_lat": "43.3611587",
+    "stop_lon": "-4.1495281",
+    "wheelchair_boarding": "2                                                                                                  "
+  },
+  {
+    "stop_id": "05629",
+    "stop_name": "Golbardo",
+    "stop_lat": "43.3408164",
+    "stop_lon": "-4.1556282",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "05631",
+    "stop_name": "Casar De Periedo",
+    "stop_lat": "43.3387837",
+    "stop_lon": "-4.1747310",
+    "wheelchair_boarding": "2                                                                                                        "
+  },
+  {
+    "stop_id": "05633",
+    "stop_name": "Virgen De La Peña",
+    "stop_lat": "43.3230394",
+    "stop_lon": "-4.1934840",
+    "wheelchair_boarding": "2                                                                                                       "
+  },
+  {
+    "stop_id": "05635",
+    "stop_name": "Ontoria",
+    "stop_lat": "43.3153337",
+    "stop_lon": "-4.2154219",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05637",
+    "stop_name": "Cabezón De La Sal",
+    "stop_lat": "43.3079038",
+    "stop_lon": "-4.2319437",
+    "wheelchair_boarding": "2                                                                                                       "
+  },
+  {
+    "stop_id": "05641",
+    "stop_name": "Treceño",
+    "stop_lat": "43.3182800",
+    "stop_lon": "-4.3090200",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05643",
+    "stop_name": "Roiz",
+    "stop_lat": "43.3282100",
+    "stop_lon": "-4.3492700",
+    "wheelchair_boarding": "2                                                                                                                    "
+  },
+  {
+    "stop_id": "05644",
+    "stop_name": "El Barcenal",
+    "stop_lat": "43.340347",
+    "stop_lon": "-4.383335",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "05645",
+    "stop_name": "San Vicente De La Barquera",
+    "stop_lat": "43.367837",
+    "stop_lon": "-4.404504",
+    "wheelchair_boarding": "2                                                                                                "
+  },
+  {
+    "stop_id": "05647",
+    "stop_name": "Pesués",
+    "stop_lat": "43.370289",
+    "stop_lon": "-4.480174",
+    "wheelchair_boarding": "2                                                                                                                    "
+  },
+  {
+    "stop_id": "05649",
+    "stop_name": "Unquera",
+    "stop_lat": "43.3747800",
+    "stop_lon": "-4.5143400",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05651",
+    "stop_name": "Nueva Montaña",
+    "stop_lat": "43.4401845",
+    "stop_lon": "-3.8493711",
+    "wheelchair_boarding": "2                                                                                                           "
+  },
+  {
+    "stop_id": "05652",
+    "stop_name": "Valle Real",
+    "stop_lat": "43.4275399",
+    "stop_lon": "-3.8405377",
+    "wheelchair_boarding": "2                                                                                                              "
+  },
+  {
+    "stop_id": "05655",
+    "stop_name": "Maliaño Vidriera",
+    "stop_lat": "43.4160163",
+    "stop_lon": "-3.8411016",
+    "wheelchair_boarding": "2                                                                                                        "
+  },
+  {
+    "stop_id": "05657",
+    "stop_name": "Astillero",
+    "stop_lat": "43.4036508",
+    "stop_lon": "-3.8206798",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "05658",
+    "stop_name": "La Cantábrica",
+    "stop_lat": "43.3973661",
+    "stop_lon": "-3.8149679",
+    "wheelchair_boarding": "2                                                                                                           "
+  },
+  {
+    "stop_id": "05659",
+    "stop_name": "San Salvador",
+    "stop_lat": "43.3937660",
+    "stop_lon": "-3.8038540",
+    "wheelchair_boarding": "2                                                                                                            "
+  },
+  {
+    "stop_id": "05661",
+    "stop_name": "Heras",
+    "stop_lat": "43.4008996",
+    "stop_lon": "-3.7666376",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "05663",
+    "stop_name": "Orejo",
+    "stop_lat": "43.3994776",
+    "stop_lon": "-3.7383974",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "05665",
+    "stop_name": "Solares",
+    "stop_lat": "43.3872470",
+    "stop_lon": "-3.7313834",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05667",
+    "stop_name": "Ceceñas",
+    "stop_lat": "43.3764924",
+    "stop_lon": "-3.7181918",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05669",
+    "stop_name": "La Cavada",
+    "stop_lat": "43.3506141",
+    "stop_lon": "-3.7070777",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "05671",
+    "stop_name": "Liérganes",
+    "stop_lat": "43.3450748",
+    "stop_lon": "-3.7426450",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "05672",
+    "stop_name": "Puente Agüero",
+    "stop_lat": "43.406489",
+    "stop_lon": "-3.719342",
+    "wheelchair_boarding": "2                                                                                                             "
+  },
+  {
+    "stop_id": "05673",
+    "stop_name": "Villaverde De Pontones",
+    "stop_lat": "43.411322",
+    "stop_lon": "-3.703643",
+    "wheelchair_boarding": "2                                                                                                    "
+  },
+  {
+    "stop_id": "05675",
+    "stop_name": "Hoz De Anero",
+    "stop_lat": "43.404885",
+    "stop_lon": "-3.666883",
+    "wheelchair_boarding": "2                                                                                                              "
+  },
+  {
+    "stop_id": "05677",
+    "stop_name": "Beranga",
+    "stop_lat": "43.4137100",
+    "stop_lon": "-3.5771300",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05679",
+    "stop_name": "Gama",
+    "stop_lat": "43.4231500",
+    "stop_lon": "-3.5247200",
+    "wheelchair_boarding": "2                                                                                                                    "
+  },
+  {
+    "stop_id": "05681",
+    "stop_name": "Cicero",
+    "stop_lat": "43.4170520",
+    "stop_lon": "-3.4904900",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "05683",
+    "stop_name": "Treto",
+    "stop_lat": "43.3940900",
+    "stop_lon": "-3.4692000",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "05685",
+    "stop_name": "Limpias",
+    "stop_lat": "43.3588100",
+    "stop_lon": "-3.4333400",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "05687",
+    "stop_name": "Marrón",
+    "stop_lat": "43.34661",
+    "stop_lon": "-3.420918",
+    "wheelchair_boarding": "2                                                                                                                     "
+  },
+  {
+    "stop_id": "05689",
+    "stop_name": "Udalla",
+    "stop_lat": "43.3136800",
+    "stop_lon": "-3.4454900",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "05691",
+    "stop_name": "Gibaja",
+    "stop_lat": "43.2821900",
+    "stop_lon": "-3.4383100",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "14202",
+    "stop_name": "Reinosa",
+    "stop_lat": "42.9944991",
+    "stop_lon": "-4.1409454",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "14203",
+    "stop_name": "Lantueno-Santiurde",
+    "stop_lat": "43.0580731",
+    "stop_lon": "-4.0840131",
+    "wheelchair_boarding": "2                                                                                                      "
+  },
+  {
+    "stop_id": "14204",
+    "stop_name": "Pesquera",
+    "stop_lat": "43.0823330",
+    "stop_lon": "-4.0738143",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "14206",
+    "stop_name": "Bárcena",
+    "stop_lat": "43.1287054",
+    "stop_lon": "-4.0534730",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "14207",
+    "stop_name": "Molledo-Portolín",
+    "stop_lat": "43.1456269",
+    "stop_lon": "-4.0390334",
+    "wheelchair_boarding": "2                                                                                                        "
+  },
+  {
+    "stop_id": "14208",
+    "stop_name": "Santa Cruz De Iguña",
+    "stop_lat": "43.1701216",
+    "stop_lon": "-4.0450627",
+    "wheelchair_boarding": "2                                                                                                     "
+  },
+  {
+    "stop_id": "14209",
+    "stop_name": "Las Fraguas",
+    "stop_lat": "43.1932190",
+    "stop_lon": "-4.0541127",
+    "wheelchair_boarding": "2                                                                                                             "
+  },
+  {
+    "stop_id": "14210",
+    "stop_name": "Los Corrales De Buelna",
+    "stop_lat": "43.2551009",
+    "stop_lon": "-4.0639472",
+    "wheelchair_boarding": "2                                                                                                  "
+  },
+  {
+    "stop_id": "14211",
+    "stop_name": "Las Caldas De Besaya",
+    "stop_lat": "43.2985945",
+    "stop_lon": "-4.0732520",
+    "wheelchair_boarding": "2                                                                                                    "
+  },
+  {
+    "stop_id": "14212",
+    "stop_name": "Viérnoles",
+    "stop_lat": "43.3245636",
+    "stop_lon": "-4.0540441",
+    "wheelchair_boarding": "2                                                                                                               "
+  },
+  {
+    "stop_id": "14213",
+    "stop_name": "Torrelavega",
+    "stop_lat": "43.3276776",
+    "stop_lon": "-4.0426871",
+    "wheelchair_boarding": "2                                                                                                             "
+  },
+  {
+    "stop_id": "14214",
+    "stop_name": "Sierrapando",
+    "stop_lat": "43.3417845",
+    "stop_lon": "-4.0266342",
+    "wheelchair_boarding": "2                                                                                                             "
+  },
+  {
+    "stop_id": "14215",
+    "stop_name": "Zurita",
+    "stop_lat": "43.3476712",
+    "stop_lon": "-3.9910501",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "14216",
+    "stop_name": "Renedo",
+    "stop_lat": "43.3531069",
+    "stop_lon": "-3.9496471",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "14217",
+    "stop_name": "Parbayón",
+    "stop_lat": "43.3767446",
+    "stop_lon": "-3.8942201",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "14218",
+    "stop_name": "Guarnizo",
+    "stop_lat": "43.3915101",
+    "stop_lon": "-3.8595450",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "14219",
+    "stop_name": "Boo",
+    "stop_lat": "43.4104796",
+    "stop_lon": "-3.8415883",
+    "wheelchair_boarding": "2                                                                                                                     "
+  },
+  {
+    "stop_id": "14220",
+    "stop_name": "Maliaño",
+    "stop_lat": "43.4161415",
+    "stop_lon": "-3.8410762",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "14223",
+    "stop_name": "Santander",
+    "stop_lat": "43.4583981",
+    "stop_lon": "-3.8109529",
+    "wheelchair_boarding": "1                                                                                                               "
+  },
+  {
+    "stop_id": "14230",
+    "stop_name": "Valdecilla",
+    "stop_lat": "43.4540888",
+    "stop_lon": "-3.8277628",
+    "wheelchair_boarding": "2                                                                                                              "
+  },
+  {
+    "stop_id": "14231",
+    "stop_name": "Nueva Montaña",
+    "stop_lat": "43.4401137",
+    "stop_lon": "-3.8493866",
+    "wheelchair_boarding": "2                                                                                                           "
+  },
+  {
+    "stop_id": "14232",
+    "stop_name": "Lombera",
+    "stop_lat": "43.2658249",
+    "stop_lon": "-4.0675902",
+    "wheelchair_boarding": "2                                                                                                                 "
+  },
+  {
+    "stop_id": "14233",
+    "stop_name": "Río Ebro",
+    "stop_lat": "43.0007554",
+    "stop_lon": "-4.1344006",
+    "wheelchair_boarding": "2                                                                                                                "
+  },
+  {
+    "stop_id": "14234",
+    "stop_name": "Pujayo",
+    "stop_lat": "43.1228745",
+    "stop_lon": "-4.0823753",
+    "wheelchair_boarding": "2                                                                                                                  "
+  },
+  {
+    "stop_id": "14235",
+    "stop_name": "Arenas De Iguña",
+    "stop_lat": "43.1850828",
+    "stop_lon": "-4.0500754",
+    "wheelchair_boarding": "2                                                                                                         "
+  },
+  {
+    "stop_id": "14236",
+    "stop_name": "Vioño",
+    "stop_lat": "43.3606470",
+    "stop_lon": "-3.9648063",
+    "wheelchair_boarding": "2                                                                                                                   "
+  },
+  {
+    "stop_id": "14237",
+    "stop_name": "Muriedas-Bahía",
+    "stop_lat": "43.4216858",
+    "stop_lon": "-3.8441175",
+    "wheelchair_boarding": "2                                                                                                          "
+  }
+]
