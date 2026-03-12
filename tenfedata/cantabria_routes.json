@@ -1,0 +1,290 @@
+[
+  {
+    "route_id": "62T0001C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Santander                               -Reinosa                                 ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0002C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Reinosa                                 -Santander                               ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0003C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "Santander                               -Cabezón De La Sal                       ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0004C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "Cabezón De La Sal                       -Santander                               ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0005C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Santander                               -Liérganes                               ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0006C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Liérganes                               -Santander                               ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0007C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Renedo                                  -Los Corrales Buelna                     ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0008C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Los Corrales Buelna                     -Renedo                                  ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0009C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Barcena                                 -Torrelavega/Tanos                       ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0010C1",
+    "route_short_name": "C1  ",
+    "route_long_name": "Torrelavega/Tanos                       -Barcena                                 ",
+    "route_type": "2",
+    "route_color": "EF3340",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0011C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0012C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0013R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "Santander                               -                                        ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0014R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "                                        -Santander                               ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0015C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Maliaño La Vidriera                     -Solares                                 ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0016C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Solares                                 -Maliaño La Vidriera                     ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0017C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0018C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0019C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0020C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0021C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0022C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0023R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0024R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0025C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0026C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0027C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0028C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "0060A9",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0029R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "Orejo                                   -Astillero                               ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0030R3",
+    "route_short_name": "R3  ",
+    "route_long_name": "Astillero                               -Orejo                                   ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0031C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0032C2",
+    "route_short_name": "C2  ",
+    "route_long_name": "                                        -                                        ",
+    "route_type": "2",
+    "route_color": "009645",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0033C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Astillero                               -La Cantábrica                           ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0034C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "La Cantábrica                           -Astillero                               ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0035C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Orejo                                   -Marrón                                  ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  },
+  {
+    "route_id": "62T0036C3",
+    "route_short_name": "C3  ",
+    "route_long_name": "Marrón                                  -Orejo                                   ",
+    "route_type": "2",
+    "route_color": "094188",
+    "route_text_color": "FFFFFF                                    "
+  }
+]
