@@ -1,0 +1,33 @@
+name: BUSGo Web Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          node --check changelog.js
+          node --check scripts/sync-public-appstore.mjs
+      - name: Check required static routes
+        run: |
+          test -f index.html
+          test -f privacidad/index.html
+          test -f soporte/index.html
+          test -f changelog/index.html
+          test -f changelog/3.0/index.html
+          test -f sitemap.xml

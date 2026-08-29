@@ -1,0 +1,10 @@
+{
+  "name": "busgo-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "sync:appstore": "node scripts/sync-public-appstore.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

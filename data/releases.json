@@ -1,0 +1,124 @@
+[
+  {
+    "version": "3.0",
+    "date": "2026-08-27",
+    "current": true,
+    "type": "major",
+    "title": "La nueva generación de BUSGo!",
+    "source": "apple-public-lookup",
+    "officialNotes": [
+      "Nuevo diseño Liquid Glass: una experiencia visual completamente renovada, con transparencias dinámicas, mayor profundidad y transiciones más fluidas.",
+      "Nuevas redes de transporte: consulta los servicios de Cercanías de Cantabria y ALSA desde Líneas, paradas, mapa y rutas multimodales, con horarios oficiales y recorridos detallados.",
+      "BUSGo! Intelligence: modelos inteligentes integrados en el dispositivo que aprenden de tus desplazamientos, recomiendan la parada más adecuada según tu contexto y te asisten durante el viaje.",
+      "Búsqueda más rápida y natural: encuentra cualquier parada, línea o destino al instante mediante una búsqueda semántica mejorada, filtros por red y accesos directos.",
+      "La Semanuca 2026: descubre la programación de Santos Mártires, recomendaciones para cada momento, mapa, plan personal, recordatorios, rutas, lanzaderas a Virgen del Mar y refuerzos del TUS para los fuegos.",
+      "Además, hemos mejorado ampliamente el rendimiento, la estabilidad y numerosos detalles de la experiencia."
+    ],
+    "highlights": [
+      "Liquid Glass",
+      "Cercanías y ALSA",
+      "BUSGo! Intelligence",
+      "Búsqueda semántica",
+      "Rutas multimodales"
+    ]
+  },
+  {
+    "version": "2.3",
+    "date": null,
+    "current": false,
+    "type": "feature",
+    "title": "BUSGo! 2.3",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "2.2.1",
+    "date": null,
+    "current": false,
+    "type": "maintenance",
+    "title": "BUSGo! 2.2.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "2.2",
+    "date": null,
+    "current": false,
+    "type": "feature",
+    "title": "BUSGo! 2.2",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "2.1.1",
+    "date": null,
+    "current": false,
+    "type": "maintenance",
+    "title": "BUSGo! 2.1.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "2.1",
+    "date": null,
+    "current": false,
+    "type": "feature",
+    "title": "BUSGo! 2.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "2.0",
+    "date": null,
+    "current": false,
+    "type": "major",
+    "title": "BUSGo! 2.0",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "1.2",
+    "date": null,
+    "current": false,
+    "type": "feature",
+    "title": "BUSGo! 1.2",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "1.1.1",
+    "date": null,
+    "current": false,
+    "type": "maintenance",
+    "title": "BUSGo! 1.1.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "1.1",
+    "date": null,
+    "current": false,
+    "type": "feature",
+    "title": "BUSGo! 1.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "1.0.1",
+    "date": null,
+    "current": false,
+    "type": "maintenance",
+    "title": "BUSGo! 1.0.1",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  },
+  {
+    "version": "1.0",
+    "date": null,
+    "current": false,
+    "type": "major",
+    "title": "Donde empezó todo",
+    "source": "pending-app-store-connect",
+    "officialNotes": []
+  }
+]
