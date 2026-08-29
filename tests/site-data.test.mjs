@@ -5,6 +5,7 @@ import { readFile } from "node:fs/promises";
 const root = new URL("../", import.meta.url);
 const releases = JSON.parse(await readFile(new URL("data/releases.json", root), "utf8"));
 const index = await readFile(new URL("index.html", root), "utf8");
+const styles = await readFile(new URL("styles.css", root), "utf8");
 
 const compareVersions = (left, right) => {
   const a = left.split(".").map(Number);
@@ -41,6 +42,11 @@ test("homepage has one H1 and promotes 3.0 instead of 2.0", () => {
   assert.equal((index.match(/<h1\b/g) ?? []).length, 1);
   assert.match(index, /BUSGo! 3\.0 ya está aquí/);
   assert.doesNotMatch(index, /Descubre BUSGo! 2\.0/);
+});
+
+test("product imagery preserves its aspect ratio and content is never hidden", () => {
+  assert.match(styles, /img\{[^}]*height:auto/);
+  assert.doesNotMatch(styles, /\.js \.reveal\.is-pending\{[^}]*opacity:0/);
 });
 
 test("public product routes are represented in the sitemap", async () => {

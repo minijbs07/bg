@@ -43,20 +43,6 @@ menuButton?.addEventListener("click", () => {
 mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => closeMenu()));
 addEventListener("keydown", (event) => { if (event.key === "Escape" && !mobileMenu?.hidden) closeMenu({ restoreFocus: true }); });
 
-const reveals = [...document.querySelectorAll(".reveal")];
-if (reducedMotion.matches || !("IntersectionObserver" in window)) {
-  reveals.forEach((element) => element.classList.add("is-visible"));
-} else {
-  reveals.forEach((element) => element.classList.add("is-pending"));
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.remove("is-pending"); entry.target.classList.add("is-visible"); observer.unobserve(entry.target);
-    });
-  }, { rootMargin: "0px 0px -8%", threshold: .08 });
-  reveals.forEach((element) => revealObserver.observe(element));
-}
-
 const tilt = document.querySelector("[data-tilt]");
 if (tilt && finePointer.matches && !reducedMotion.matches) {
   tilt.addEventListener("pointermove", (event) => {
@@ -107,7 +93,8 @@ arrivalForm?.addEventListener("submit", async (event) => {
     const payload = await response.json();
     const lines = Array.isArray(payload.activeLines) ? payload.activeLines : [];
     if (!lines.length) { demoStatus.textContent = "No hay próximas llegadas disponibles para esta parada."; return; }
-    demoStatus.textContent = `${lines.length} ${lines.length === 1 ? "línea encontrada" : "líneas encontradas"}.`;
+    const usesOpenData = lines.some((line) => line?.source === "santanderOpenData");
+    demoStatus.textContent = `${lines.length} ${lines.length === 1 ? "línea encontrada" : "líneas encontradas"}${usesOpenData ? " · datos abiertos de Santander" : " · información en directo"}.`;
     const fragment = document.createDocumentFragment();
     lines.slice(0, 6).forEach((line) => {
       const next = line?.arrivals?.next;
@@ -115,7 +102,9 @@ arrivalForm?.addEventListener("submit", async (event) => {
       const badge = document.createElement("span"); badge.className = "line-badge"; badge.textContent = String(line.label ?? "—");
       const description = document.createElement("span");
       const destination = document.createElement("b"); destination.textContent = String(line.destination ?? "Destino no disponible");
-      const source = document.createElement("small"); source.textContent = "Próxima llegada"; description.append(destination, source);
+      const source = document.createElement("small");
+      source.textContent = line?.source === "santanderOpenData" ? "Estimación · datos.santander.es" : "Próxima llegada en directo";
+      description.append(destination, source);
       const eta = document.createElement("strong"); eta.textContent = Number.isFinite(next) ? (next <= 0 ? "Próximo" : `${Math.round(next)} min`) : "—";
       row.append(badge, description, eta); fragment.append(row);
     });
