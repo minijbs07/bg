@@ -42,3 +42,10 @@ test("homepage has one H1 and promotes 3.0 instead of 2.0", () => {
   assert.match(index, /BUSGo! 3\.0 ya está aquí/);
   assert.doesNotMatch(index, /Descubre BUSGo! 2\.0/);
 });
+
+test("public product routes are represented in the sitemap", async () => {
+  const sitemap = await readFile(new URL("sitemap.xml", root), "utf8");
+  for (const route of ["/bg/", "/bg/changelog/", "/bg/changelog/3.0/", "/bg/soporte/", "/bg/privacidad/"]) {
+    assert.match(sitemap, new RegExp(route.replaceAll("/", "\\/")));
+  }
+});
